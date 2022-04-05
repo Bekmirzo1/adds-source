@@ -1,0 +1,105 @@
+<div class="popup popup_login login-popup">
+	<div class="popup__content">
+		<div class="popup__body login-popup__body">
+			<h3 class="login-popup__title popup__title">Log In</h3>
+			<form action="" class="login-popup__form">
+				<div class="login-popup__rows form__rows">
+					<div class="login-popup__input form__input">
+						<input autocomplete="off" type="text" class="input" placeholder="Enter your e-mail">
+					</div>
+					<div class="login-popup__input form__input form__input_password">
+						<input autocomplete="off" type="password" class="input" placeholder="Password">
+						<span class="form__eye _show">
+							<img src="img/icons/eye.svg" alt="">
+						</span>
+					</div>
+				</div>
+				<button type="submit" class="login-popup__button btn btn_main">
+					Log In
+				</button>
+			</form>
+			<div class="login-popup__sign">
+				<div class="login-popup__sign-text">
+					Dont have an account?
+				</div>
+				<a href="#signup" class="login-popup__sign-link btn _popup-link">
+					Sign Up
+				</a>
+			</div>
+			<div class="popup__close"></div>
+		</div>
+	</div>
+</div>
+<div class="popup popup_signup signup-popup">
+	<div class="popup__content">
+		<div class="popup__body signup-popup__body">
+			<h3 class="signup-popup__title popup__title">
+				Submit <span>your application</span>
+			</h3>
+			<form action="" class="signup-popup__form">
+				<div class="signup-popup__rows form__rows">
+					<div class="signup-popup__input form__input">
+						<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+							placeholder="What is your name?" class="input">
+					</div>
+					<div class="signup-popup__row form__row">
+						<div class="form__input">
+							<input autocomplete="off" type="text" name="form[]" data-error="Ошибка"
+								placeholder="Enter your e-mail" class="input">
+						</div>
+						<div class="form__media">
+							<select name="form[]" class="icon" data-type="icon" data-icon-placeholder="Messenger ID*">
+								<option value="1" class="_icon-telegram">Пункт №1</option>
+								<option value="2" class="_icon-linkedin2">Пункт №2</option>
+								<option value="3" class="_icon-whatsapp">Пункт №3</option>
+							</select>
+						</div>
+					</div>
+					<div class="signup-popup__input form__input">
+						<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="App link"
+							class="input">
+					</div>
+					<div class="signup-popup__select form__select">
+						<select name="form[]" class="sel" data-type="input"
+							data-placeholder="How did you hear about CAS?">
+							<option value="1" selected>At the conference</option>
+							<option value="2">Friend recomendation</option>
+							<option value="3">Telegram channel</option>
+							<option value="4">Facebook</option>
+							<option value="5">LinkedIn</option>
+							<option value="6">Other</option>
+						</select>
+					</div>
+					<div class="form__input form__input_textarea">
+						<textarea autocomplete="off" name="form[]" placeholder="Leave your comment" data-error="Ошибка"
+							class="input"></textarea>
+					</div>
+					<div class="signup-popup__captcha">
+						<img src="img/captcha.jpg" alt="">
+					</div>
+				</div>
+				<button type="submit" class="signup-popup__button btn btn_main">
+					Submit
+				</button>
+			</form>
+			<div class="popup__close"></div>
+		</div>
+	</div>
+</div>
+<div class="popup popup_thanks thanks-popup">
+	<div class="popup__content">
+		<div class="popup__body thanks-popup__body">
+			<div class="thanks-popup__mark">
+				<img src="img/icons/chek-big.svg" alt="">
+			</div>
+			<h3 class="thanks-popup__title popup__title">Thank you!</h3>
+			<div class="thanks-popup__text">
+				We will contact you as soon <span>as possible</span>
+			</div>
+			<a href="" class="thanks-popup__button btn btn_main">
+				Close
+			</a>
+			<div class="popup__close"></div>
+		</div>
+	</div>
+</div>

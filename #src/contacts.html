@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title":"contacts",
+})
+
+<body>
+    <div class="wrapper">
+        <!-- *Header -->
+        @@include('_header.html')
+        <!-- *Page -->
+        <main class="page _no-full">
+            <section class="contacts">
+                <div class="contacts__container _container">
+                    <h2 class="contacts__title _title">Contacts</h2>
+                    <div class="contacts__body">
+                        <div class="contacts__data data-contacts">
+                            <div class="data-contacts__columns">
+                                <div class="data-contacts__column">
+                                    <h5 class="data-contacts__label">E-mail</h5>
+                                    <a href="mailto:support@cleveradssolutions.com" class="data-contacts__email">
+                                        support@cleveradssolutions.com
+                                    </a>
+                                </div>
+                                <div class="data-contacts__column">
+                                    <h5 class="data-contacts__label">Registration address</h5>
+                                    <div class="data-contacts__adress">
+                                        New Horizon Building, Ground floor 3
+                                        1/2 Miles Philip S.W. Goldson Highway, Belize City, Belize
+                                    </div>
+                                </div>
+                                <div class="data-contacts__column">
+                                    <h5 class="data-contacts__label">Our social media</h5>
+                                    <ul class="data-contacts__social-list">
+                                        <li class="data-contacts__social">
+                                            <a href="" class="_icon-linkedin"></a>
+                                        </li>
+                                        <li class="data-contacts__social">
+                                            <a href="" class="_icon-facebook"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="" class="contacts__form form">
+                            <h3 class="contacts__form-title">
+                                Have a question?
+                            </h3>
+                            <div class="contacts__rows form__rows">
+                                <div class="contacts__input form__input">
+                                    <input autocomplete="off" type="text" name="form[]" placeholder="What is your name?" class="input">
+                                </div>
+                                <div class="contacts__input form__input">
+                                    <input autocomplete="off" type="text" name="form[]" placeholder="Enter your e-mail" class="input">
+                                </div>
+                                <div class="contacts__textarea form__input form__input_textarea">
+                                    <textarea autocomplete="off" name="form[]" placeholder="Enter your question" class="input"></textarea>
+                                </div>
+                                <button type="submit" class="contacts__button btn btn_main">
+                                    Send a request
+                                </button>
+                            </div>
+                            <div class="contacts__cat">
+                                <img src="img/cat.svg" alt="">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- *footer -->
+        @@include('_footer.html')
+    </div>
+    @@include('_popup.html')
+    @@include('_js.html')
+</body>
+
+</html>

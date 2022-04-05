@@ -1,0 +1,167 @@
+.footer {
+    // .footer__container
+    &__container {
+    }
+    // .footer__body
+    &__body {
+        padding: 40px 0px 50px 0px;
+        border-top: 1px solid #b4b4b4;
+        @media (max-width: ($md2+px)) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 0px 18px 0px;
+        }
+    }
+    // .footer__main
+    &__main {
+        display: flex;
+        margin: 0px 0px 40px 0px;
+        @media (min-width: ($md2+px)) {
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        @media (max-width: ($md2+px)) {
+            flex-direction: column;
+            align-items: center;
+            // margin: 0px 0px 40px 0px;
+        }
+    }
+    // .footer__logo
+    &__logo {
+        display: block;
+        flex: 0 0 182px;
+        width: 182px;
+        @media (max-width: ($md2+px)) {
+            margin: 0px 0px 40px 0px;
+            width: 182px;
+            flex: 0 0 auto;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+    // .footer__list
+    &__list {
+        display: flex;
+        align-items: center;
+        @media (max-width: ($md2+px)) {
+            margin: 0px 0px 40px 0px;
+        }
+        @media (max-width: ($md4+px)) {
+            flex-direction: column;
+        }
+    }
+    // .footer__list-item
+    &__list-item {
+        font-family: $fontInter;
+        line-height: 156%;
+        &:not(:last-child) {
+            margin: 0px 60px 0px 0px;
+            @media (max-width: ($md4+px)) {
+                margin: 0px 0px 40px 0px;
+            }
+        }
+        a {
+            color: inherit;
+            position: relative;
+            @media (any-hover: hover) {
+                &:hover {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 0%;
+                    height: 2px;
+                    top: 100%;
+                    left: 0;
+                    transition: all 0.3s ease 0s;
+                    background-color: $blueColor;
+                }
+            }
+        }
+    }
+    // .footer__label
+    &__label {
+        font-size: 16px;
+        line-height: 120%;
+        font-weight: 700;
+        display: block;
+        margin: 0px 0px 8px 0px;
+        color: rgba(0, 0, 0, 0.2);
+        @media (max-width: ($md2+px)) {
+            text-align: center;
+        }
+    }
+    // .footer__email
+    &__email {
+    }
+    // .footer__footer
+    &__footer {
+        display: flex;
+        @media (min-width: ($md2+px)) {
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        @media (max-width: ($md2+px)) {
+            flex-direction: column-reverse;
+        }
+    }
+    // .footer__rights
+    &__rights {
+        font-size: 14px;
+        line-height: 120%;
+        color: #858585;
+        text-align: center;
+    }
+    // .footer__social
+    &__social {
+        @media (max-width: ($md2+px)) {
+            margin: 0px 0px 40px 0px;
+        }
+    }
+}
+.email-footer {
+    // .email-footer__label
+    &__label {
+    }
+    // .email-footer__link
+    &__link {
+        font-size: 16px;
+        line-height: 120%;
+        color: #000;
+    }
+}
+.social-footer {
+    // .social-footer__label
+    &__label {
+    }
+    // .social-footer__items
+    &__items {
+        display: flex;
+        align-items: center;
+        @media (max-width: ($md2+px)) {
+            justify-content: center;
+        }
+    }
+    // .social-footer__item
+    &__item {
+        font-size: 40px;
+        color: #425893;
+        @media (max-width: ($md2+px)) {
+            font-size: 60px;
+        }
+        &:not(:last-child) {
+            margin: 0px 12px 0px 0px;
+        }
+        &._icon-facebook {
+            color: #425893;
+        }
+        &._icon-linkedin {
+            color: #3375b0;
+        }
+    }
+}
