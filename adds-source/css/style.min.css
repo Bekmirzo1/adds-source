@@ -2140,6 +2140,7 @@ textarea.input {
 }
 .fullscreen__cat-svg .stroke-white {
   opacity: 0;
+  stroke-width: 3px;
   stroke: #fff;
 }
 @media (max-width: 767.98px) {
@@ -2922,6 +2923,7 @@ textarea.input {
   flex: 0 0 192px;
 }
 .cat-animation__cats .stroke-white {
+  stroke-width: 3px;
   opacity: 0;
   stroke: #fff;
 }
