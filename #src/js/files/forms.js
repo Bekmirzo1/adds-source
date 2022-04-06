@@ -27,6 +27,23 @@ function form_submit(e) {
 		e.preventDefault();
 	}
 }
+// *form eye
+document.addEventListener("click", function (e) {
+	const target = e.target;
+	if (target.closest('.form__eye')) {
+		const eye = target.closest('.form__eye');
+		const formPassword = eye.previousElementSibling;
+		if (formPassword && formPassword.tagName === 'INPUT') {
+			if (!eye.classList.contains('_show')) {
+				eye.classList.add('_show')
+				formPassword.type = 'password';
+			} else {
+				eye.classList.remove('_show')
+				formPassword.type = 'text';
+			}
+		}
+	}
+});
 
 function form_validate(form) {
 	let error = 0;
@@ -341,7 +358,11 @@ function select_item(select) {
 			select_type_content = `<div class="select__value _icon-down"><span class="${select_selected_option.className}"></span></div> <input autocomplete="off" type="text" name="form[]" data-error="Ошибка" class="input">`
 		}
 	} else {
-		select_type_content = '<div class="select__value _icon-down"><span>' + select_selected_text + '</span></div>';
+		if (!select.hasAttribute('multiple')) {
+			select_type_content = '<div class="select__value _icon-down"><span>' + select_selected_text + '</span></div>';
+		} else{
+			select_type_content = '<div class="select__value _icon-down"><span class="select__value-items"></span></div>';
+		}
 	}
 
 	select_parent.insertAdjacentHTML('beforeend',
@@ -355,11 +376,24 @@ function select_item(select) {
 function select_actions(original, select) {
 	const select_item = select.querySelector('.select__item');
 	const selectTitle = select.querySelector('.select__title');
+	const selectValue = selectTitle.querySelector('.select__value');
+	const selectValueItemsParent = selectValue.querySelector('.select__value-items');
 	const select_body_options = select.querySelector('.select__options');
 	const select_options = select.querySelectorAll('.select__option');
 	const select_type = original.getAttribute('data-type');
 	const select_input = select.querySelector('.select__input');
 
+	if (original.hasAttribute('multiple')) {
+		const originalsSelected = original.querySelectorAll('[selected]');
+		if (originalsSelected.length > 0) {
+			for (let index = 0; index < originalsSelected.length; index++) {
+				const originalSelected = originalsSelected[index];
+				const activeValue = select.querySelector(`.select__option[data-value="${originalSelected.value}"]`);
+				activeValue.classList.add('_selected')
+			}
+
+		}
+	}
 	selectTitle.addEventListener('click', function (e) {
 		selectItemActions();
 	});
@@ -379,7 +413,7 @@ function select_actions(original, select) {
 			}
 		}
 		select.querySelector('.select__value').innerHTML = '<span>' + selectedOptionsText + '</span>';
-		// console.log(selectedOptionsText);
+		console.log(selectedOptionsText);
 	}
 	function selectItemActions(type) {
 		if (!type) {
@@ -407,6 +441,20 @@ function select_actions(original, select) {
 		if (select_option.getAttribute('data-value') == original.value && !original.hasAttribute('multiple')) {
 			select_option.style.display = 'none';
 		}
+		if (original.hasAttribute('multiple')) {
+			let originalOptions = original.querySelectorAll('option');
+			const spans = document.createElement('span');
+			spans.className = `select__value-item select__value-item_${index+1}`;
+			// console.log(spans);
+			// spans[select_option_value].classList.add(`selected__item`)
+			// spans[select_option_value].classList.add(`selected__item_${select_option_value}`)
+			selectValueItemsParent.append(spans)
+			const selectValueItems = selectValueItemsParent.querySelectorAll('.select__value-item');
+			selectValueItems[index].innerHTML = `<span class="select__value-item-text">${select_option.innerHTML}</span><span class="select__value-item-close"></span>`;
+			if (select_option.classList.contains('_selected')) {
+				selectValueItems[index].classList.add('_selected');
+			}
+		}
 		// }
 		select_option.addEventListener('click', function () {
 			for (let index = 0; index < select_options.length; index++) {
@@ -418,8 +466,8 @@ function select_actions(original, select) {
 				original.value = select_option_value;
 			} else {
 				if (original.hasAttribute('multiple')) {
-					select_option.classList.toggle('_selected');
-					selectMultiItems();
+					// select_option.classList.toggle('_selected');
+					/* selectMultiItems(); */
 				} else {
 					if (select_type == 'icon') {
 						select.querySelector('.select__value').innerHTML = `<span class="${select_option.dataset.icon}"></span>`;

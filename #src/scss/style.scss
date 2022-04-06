@@ -10,9 +10,11 @@ $fontSize: 18;
 $fontInter: "inter";
 //<ПЕРЕМЕННЫЕ>===========================================================================================================
 $minWidth: 375px;
+$iphone: 420px;
 $maxWidth: 1440;
 $containerPadding: 20;
 $maxWidthContainer: 1200 + ($containerPadding * 2);
+$md0: 992;
 $md1: $maxWidthContainer + 20;
 $md2: 1023.98;
 $md3: 767.98;

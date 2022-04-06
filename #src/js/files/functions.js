@@ -156,20 +156,6 @@ document.addEventListener('click', function (e) {
             }
         }
     }
-    // *form eye
-    if (target.closest('.form__eye')) {
-        const eye = target.closest('.form__eye');
-        const formPassword = eye.previousElementSibling;
-        if (formPassword && formPassword.tagName === 'INPUT') {
-            if (!eye.classList.contains('_show')) {
-                eye.classList.add('_show')
-                formPassword.type = 'password';
-            } else {
-                eye.classList.remove('_show')
-                formPassword.type = 'text';
-            }
-        }
-    }
 });
 function changeItemActive(target) {
     if (!target.closest('._item._change')) {
