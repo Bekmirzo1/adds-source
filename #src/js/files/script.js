@@ -70,16 +70,10 @@ window.addEventListener("load", function () {
                 emailFooter.style.minWidth = 'auto';
             }
         }
-        /* const widthMedia = window.matchMedia('(min-width: 1023.98px)');
-        widthMedia.addListener(autoWidth);
-        autoWidth(widthMedia); */
         languageMedia.addListener(autoWidth);
         autoWidth(languageMedia)
     }
 });
-
-
-// const coinImage = document.querySelector('._trs-coin-default');
 
 
 const coinsImage = document.querySelectorAll('.coins__coin');
@@ -103,7 +97,6 @@ if (coinsImage.length > 0) {
 
                         // Вычисляем смещение 
                         let move = (parallaxYCenter - scrollYCenter) * moveCoef;
-                        // console.log(move);
                         coinImage.style.transform = `translate3d(0, ${move}%, 0)`;
                     }
                 }
@@ -121,65 +114,13 @@ if (coinsImage.length > 0) {
     coinMedia.addListener(parallaxMob);
     parallaxMob(coinMedia);
 }
-/* const coinsImage = document.querySelectorAll('._trs-coin-default img');
-if (coinsImage.length > 0) {
-    let coinParallax;
-    const body = document.body;
-    function parallaxMob(media) {
-        if (!media.matches) {
-            body.classList.add('_parallax');
-            let scaleNum;
-            let direction;
-            for (let index = 0; index < coinsImage.length; index++) {
-                const coinImage = coinsImage[index];
-                if (coinImage.dataset.scale) {
-                    scaleNum = coinImage.dataset.scale;
-                } else {
-                    scaleNum = 2;
-                }
-                if (coinImage.dataset.direction) {
-                    direction = coinImage.dataset.direction;
-                } else {
-                    direction = 'up left';
-                }
-                coinParallax = new simpleParallax(coinImage, {
-                    orientation: direction,
-                    // orientation: 'down',
-                    scale: scaleNum,
-                    overflow: true,
-                    delay: .3,
-                    transition: 'linear',
-                    maxTransition: 60,
-                });
-            }
-            // сoinParallax = new simpleParallax(coinsImage, {
-            //     orientation: 'up left',
-            //     // orientation: 'down',
-            //     scale: 2,
-            //     overflow: true,
-            //     delay: .3,
-            //     transition: 'linear',
-            //     maxTransition: 60,
-            // });
-        } else if (media.matches) {
-            if (body.classList.contains('_parallax')) {
-                body.classList.remove('_parallax');
-                coinParallax.destroy();
-            }
-        }
-    }
-    const coinMedia = window.matchMedia('(max-width: 767.98px)');
-    coinMedia.addListener(parallaxMob);
-    parallaxMob(coinMedia);
-}*/
-
 // *hug video
 const animationHug = document.querySelector('.animation-hug');
 if (animationHug) {
     const video = animationHug.querySelector('.animation-hug__cat video');
     document.addEventListener("click", function (e) {
         const target = e.target;
-        if (target.closest('.animation-hug__click-text')) {
+        if (target.closest('.animation-hug__click') || target.closest('.animation-hug__cat')) {
             video.play();
         }
     });

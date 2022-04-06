@@ -17,14 +17,6 @@ testWebP(function (support) {
     }
 });
 
-// *wrapper onload change
-window.addEventListener("load", function () {
-    if (document.querySelector('.wrapper')) {
-        setTimeout(function () {
-            document.querySelector('.wrapper').classList.add('_loaded');
-        }, 0);
-    }
-});
 
 // *header on scroll change
 const header = document.querySelector('.header');
@@ -109,34 +101,6 @@ function body_lock_add(delay) {
     }
 }
 
-// *Custom checkboxes
-const customCheckboxes = document.querySelectorAll('._custom-chk');
-if (customCheckboxes.length > 0) {
-    for (let index = 0; index < customCheckboxes.length; index++) {
-        const customCheckbox = customCheckboxes[index];
-        customCheckbox.addEventListener('click', function () {
-            customCheckbox.classList.toggle('_active')
-        });
-    }
-}
-
-// *Сhange active
-const clickItemParents = document.querySelectorAll('._items-parent');
-if (clickItemParents.length > 0) {
-    for (let index = 0; index < clickItemParents.length; index++) {
-        const clickItemParent = clickItemParents[index];
-        const clickItems = clickItemParent.querySelectorAll('._item-click');
-        for (let index = 0; index < clickItems.length; index++) {
-            const clickItem = clickItems[index];
-            clickItem.addEventListener('click', function (e) {
-                const clickItemActive = clickItemParent.querySelector('._item-click._active');
-                clickItemActive.classList.remove('_active');
-                clickItem.classList.add('_active');
-                e.preventDefault();
-            });
-        }
-    }
-}
 
 document.addEventListener('click', function (e) {
     const target = e.target;
@@ -314,23 +278,6 @@ if (spollersArray.length > 0) {
 
     Если нужно чтобы в блоке открывался только один спойлер к атрибуту data-spollers добавляем атрибут data-one-spoller
  */
-
-// *Gallery
-let gallery = document.querySelectorAll('._gallery');
-if (gallery) {
-    gallery_init();
-}
-function gallery_init() {
-    for (let index = 0; index < gallery.length; index++) {
-        const el = gallery[index];
-        lightGallery(el, {
-            counter: false,
-            selector: 'a',
-            download: false
-        });
-    }
-}
-
 // *Popups
 let popup_link = document.querySelectorAll('._popup-link');
 let popups = document.querySelectorAll('.popup');
@@ -476,70 +423,6 @@ let _slideToggle = (target, duration = 500) => {
         return _slideUp(target, duration);
     }
 };
-// * Filter
-const filterLinks = document.querySelectorAll('.filter__link');
-const filterCards = document.querySelectorAll('.filter__card');
-if (filterCards.length > 0) {
-    for (let index = 0; index < filterLinks.length; index++) {
-        const filterLink = filterLinks[index];
-        filterLink.addEventListener('click', function (e) {
-            filterLinkClicked(filterLink);
-            filterLinksNoTouch(e.target, filterLinks);
-            filterBody(filterLink.dataset.filter, filterCards);
-        });
-    }
-    function filterLinkClicked(filterLink) {
-        const opened = document.querySelectorAll('.filter__link._opened');
-        if (opened) {
-            opened[0].className = opened[0].className.replace(' _opened', '');
-            filterLink.classList.add('_opened');
-        }
-    }
-
-    function filterLinksNoTouch(target, links) {
-        for (let index = 0; index < links.length; index++) {
-            const link = links[index];
-            if (link.dataset.filter && !link.classList.contains('_no-touch')) {
-                if (target.dataset.filter !== 'all') {
-                    link.classList.add('_no-touch');
-                } else if (target.dataset.filter.toLowerCase() === 'all') {
-                    link.classList.remove('_no-touch');
-                }
-            }
-            const linkAnim = document.querySelector('.filter__link._opened');
-            linkAnim.addEventListener('transitionend', function () {
-                link.classList.remove('_no-touch');
-            });
-        }
-    }
-
-    function filterBody(category, items) {
-        for (let index = 0; index < items.length; index++) {
-            const item = items[index];
-            const ItemFilter = item.classList.contains(category);
-            const ShowAll = category.toLowerCase() === 'all';
-            item.classList.add('_show')
-            if (!ShowAll) {
-                item.addEventListener('transitionend', function () {
-                    if (!ItemFilter) {
-                        item.classList.add('_hide')
-                        item.classList.remove('_show')
-                    } else if (ItemFilter) {
-                        item.classList.remove('_hide')
-                        item.classList.remove('_show')
-                    }
-                });
-
-            } else {
-                item.addEventListener('transitionend', function () {
-                    item.classList.remove('_show')
-                    item.classList.remove('_hide')
-                });
-            }
-        }
-    }
-}
-
 //IsHidden
 function _is_hidden(el) {
     return (el.offsetParent === null)

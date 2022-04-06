@@ -1,32 +1,3 @@
-// * Минни версия Динамического адаптива
-/* const item = document.querySelector('.content__block-item');
-if (item) {
-	const parent_original = document.querySelector('.content__blocks-city');
-	const parent = document.querySelector('.content__column-river');
-	function dynamicAdaptive(e) {
-		if (e.matches) {
-			if (!item.classList.contains('done')) {
-				parent.insertBefore(item, parent.children[2])
-				item.classList.add('done')
-			}
-		} else {
-			if (item.classList.contains('done')) {
-				parent_original.insertBefore(item, parent_original.children[2])
-				item.classList.remove('done')
-			}
-		}
-	}
-	const mediaWidth = window.matchMedia('(max-width: 767.98px)');
-	mediaWidth.addListener(dynamicAdaptive)
-	dynamicAdaptive(mediaWidth);
-} */
-
-// Dynamic Adapt v.1
-// HTML data-da="where(uniq class name),when(breakpoint),position(digi)"
-// e.x. data-da=".item,992,2"
-// Andrikanych Yevhen 2020
-// https://www.youtube.com/c/freelancerlifestyle
-
 function DynamicAdapt(type) {
 	this.type = type;
 }

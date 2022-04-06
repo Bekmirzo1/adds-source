@@ -682,6 +682,7 @@
     &__cats{
         width: 192px;
         .stroke-white{
+            stroke-width: 3px;
             opacity: 0;
             stroke: #fff;
         }
@@ -1212,7 +1213,10 @@
     // .animation-hug__cat
     &__cat {
         width: 350px;
-        pointer-events: none;
+        // pointer-events: none;
+        cursor: pointer;
+        // position: relative;
+        // z-index: 2;
         @media (max-width: ($md1+px)) {
             width: 320px;
         }
@@ -1257,7 +1261,8 @@
         top: -120%;
         right: 46%;
         width: 218px;
-        pointer-events: none;
+        // pointer-events: none;
+        cursor: pointer;
         @media (max-width: ($md1+px)) {
             // transform: rotate(20deg);
         }
