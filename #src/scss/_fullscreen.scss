@@ -5,19 +5,11 @@
         // padding-bottom: 100px;
     }
     // .fullscreen__container
-    &__wrap{
-        overflow: hidden;
-        position: relative;
-        @include adaptiv-value("margin-bottom", 79, 60, 1);
-        @media (max-width: ($md4+px)) {
-            margin: 0px 0px 100px 0px;
-        }
-    }
     &__container {
         // @include adaptiv-value("padding-bottom", 292, 110, 1);
         // padding-bottom: 0;
         @media (max-width: ($md4+px)) {
-            min-height: 100%;
+            min-height: 100vh;
         }
     }
     // .fullscreen__content
@@ -68,15 +60,20 @@
     // .fullscreen__cat
     &__cat {
         display: flex;
-        width: 100%;
         flex-direction: column;
         align-items: flex-end;
         // background: url(../img/line.svg) bottom no-repeat;
-
+        @include adaptiv-value("margin-bottom", 79, 60, 1);
+        @media (max-width: ($md4+px)) {
+            margin: 0px 0px 100px 0px;
+        }
         &-coin {
             svg {
                 position: absolute;
                 display: block;
+                // width: 45px;
+                z-index: 0;
+                // height: 45px;
             }
             @media (max-width: ($md3+px)) {
                 width: 35px;
@@ -165,7 +162,7 @@
                 transform: rotate(-70deg);
             }
             100% {
-                top: 1000px;
+                top: 700px;
                 width: 40px;
                 height: 40px;
                 transform: rotate(60deg);
@@ -220,8 +217,6 @@
         }
         &-animation {
             display: flex;
-            position: relative;
-            z-index: 1000;
             align-items: center;
             align-items: flex-end;
             svg {
@@ -232,15 +227,10 @@
                 .fullscreen__cat-svg {
                     order: 1;
                 }
-
                 .fullscreen__cat-truck {
                     left: auto;
                     right: 20px;
                     order: 2;
-                    &::after{
-                        left: auto;
-                        right: 0;
-                    }
                     @media (max-width: ($md3+px)) {
                         right: 2vw;
                     }
@@ -255,23 +245,6 @@
             left: 20px;
             z-index: 20;
             display: block;
-            &::after{
-                content: '';
-                width: calc(100% - 35px);
-                height: calc(100% - 20px);
-                z-index: -1;
-                border-top-left-radius: 40px;
-                border-top-right-radius: 40px;
-                background:#0174ff;
-                position: absolute;
-                top: 20px;left: 0;
-                @media (max-width: ($md3+px)) {
-                    width: calc(100% - 15px);
-                    height: calc(100% - 10px);
-                    height: calc(100% - 10px);
-                    top: 10px;
-                }
-            }
             .coins-item {
                 opacity: 0;
             }
@@ -320,10 +293,5 @@
     }
     // .fullscreen__cat-line
     &__cat-line {
-        background: #0174ff;
-        position: relative;
-        z-index: 10;
-        svg{
-        }
     }
 }
