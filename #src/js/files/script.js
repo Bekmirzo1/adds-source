@@ -171,6 +171,16 @@ if (coinsImage.length > 0) {
     const coinMedia = window.matchMedia('(max-width: 767.98px)');
     coinMedia.addListener(parallaxMob);
     parallaxMob(coinMedia);
-} 
-*/
+}*/
 
+// *hug video
+const animationHug = document.querySelector('.animation-hug');
+if (animationHug) {
+    const video = animationHug.querySelector('.animation-hug__cat video');
+    document.addEventListener("click", function (e) {
+        const target = e.target;
+        if (target.closest('.animation-hug__click-text')) {
+            video.play();
+        }
+    });
+}

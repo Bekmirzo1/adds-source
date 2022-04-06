@@ -978,7 +978,7 @@
             justify-content: space-between;
         }
         @media (max-width: ($md1+px)) {
-            padding: 60px 40px 100px 40px;
+            padding: 60px 40px 100px 0px;
         }
         @media (max-width: ($md2+px)) {
             padding: 60px 40px 60px 40px;
@@ -993,6 +993,7 @@
     &__animation {
         // flex: 0 0 math.div(391, 1200) * 100%;
         margin: 0px 10px 0px 0px;
+        flex: 1 1 auto;
         position: relative;
         z-index: 2;
         @media (max-width: ($md2+px)) {
@@ -1017,6 +1018,9 @@
         color: $blueColor;
         text-align: left;
         margin: 0px 0px 40px 0px;
+        @media (max-width: ($md4+px)) {
+            margin: 0px 0px 20px 0px;
+        }
     }
     // .hug__text
     &__text {
@@ -1207,11 +1211,17 @@
     }
     // .animation-hug__cat
     &__cat {
+        width: 350px;
+        pointer-events: none;
+        @media (max-width: ($md1+px)) {
+            width: 320px;
+        }
         @media (max-width: ($md2+px)) {
             margin: 0px 0px 20px 0px;
         }
         @media (max-width: ($md4+px)) {
-            width: 135px;
+            width: 220px;
+            margin: 0;
         }
         img,
         video {
@@ -1221,8 +1231,12 @@
     // .animation-hug__click
     &__click {
         position: relative;
-        @media (min-width: ($md2+px)) {
-            margin: 0px 0px -43px 0px;
+        margin: 0px 0px -43px -55px;
+        @media (max-width: ($md1+px)) {
+            // margin: 0px 0px -26px -60px;
+        }
+        @media (max-width: ($md2+px)) {
+            margin: 0;
         }
     }
     // .animation-hug__click-text
@@ -1244,6 +1258,9 @@
         right: 46%;
         width: 218px;
         pointer-events: none;
+        @media (max-width: ($md1+px)) {
+            // transform: rotate(20deg);
+        }
         @media (max-width: ($md2+px)) {
             top: -2%;
             right: 98%;
