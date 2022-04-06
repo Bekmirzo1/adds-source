@@ -281,7 +281,7 @@
     }
     // .fullscreen__cat-animation
     &__cat-animation {
-        min-width: 230px;
+        // min-width: 230px;
         @media (max-width: ($md3+px)) {
             max-width: math.div(230, 335) * 100%;
         }
