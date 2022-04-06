@@ -1,6 +1,7 @@
 /node_modules/
-/dist/
+/adds-source/
 /.git/
+/.vscode/
 /app/css/
 /**/*.psd
 /**/Thumbs.db
