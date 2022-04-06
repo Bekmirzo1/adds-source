@@ -1,0 +1,9 @@
+/node_modules/
+/adds-source/
+/.git/
+/.vscode/
+/app/css/
+/**/*.psd
+/**/Thumbs.db
+*.map
+*-lock.json
