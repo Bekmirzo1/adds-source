@@ -64,6 +64,7 @@
     // .fullscreen__cat
     &__cat {
         display: flex;
+        width: 100%;
         flex-direction: column;
         align-items: flex-end;
         // background: url(../img/line.svg) bottom no-repeat;
@@ -162,7 +163,7 @@
                 transform: rotate(-70deg);
             }
             100% {
-                top: 700px;
+                top: 1000px;
                 width: 40px;
                 height: 40px;
                 transform: rotate(60deg);
@@ -231,6 +232,10 @@
                     left: auto;
                     right: 20px;
                     order: 2;
+                    &::after{
+                        left: auto;
+                        right: 0;
+                    }
                     @media (max-width: ($md3+px)) {
                         right: 2vw;
                     }
@@ -245,6 +250,23 @@
             left: 20px;
             z-index: 20;
             display: block;
+            &::after{
+                content: '';
+                width: calc(100% - 35px);
+                height: calc(100% - 20px);
+                z-index: -1;
+                border-top-left-radius: 40px;
+                border-top-right-radius: 40px;
+                background:#0174ff;
+                position: absolute;
+                top: 20px;left: 0;
+                @media (max-width: ($md3+px)) {
+                    width: calc(100% - 15px);
+                    height: calc(100% - 10px);
+                    height: calc(100% - 10px);
+                    top: 10px;
+                }
+            }
             .coins-item {
                 opacity: 0;
             }
@@ -293,5 +315,10 @@
     }
     // .fullscreen__cat-line
     &__cat-line {
+        background: #0174ff;
+        position: relative;
+        z-index: 10;
+        svg{
+        }
     }
 }

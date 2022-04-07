@@ -201,46 +201,6 @@
     }
 }
 //====================================================================================================
-._video {
-    position: relative;
-    overflow: hidden;
-    height: 0;
-    padding-bottom: 56.25%;
-    video,
-    iframe,
-    object,
-    embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
-.videobg {
-    video,
-    iframe,
-    object,
-    embed {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        z-index: -100;
-        transform: translateX(-50%) translateY(-50%);
-        background-size: cover;
-    }
-}
-
-//====================================================================================================
-#map {
-    background: url("../img/icons/loading.gif") center / 50px no-repeat;
-}
-//====================================================================================================
-._swiper,
 ._slider {
     overflow: hidden;
     //.swiper-wrapper
@@ -277,17 +237,7 @@
 .swiper-button-lock {
     display: none !important;
 }
-//====================================================================================================
-._tabs {
-}
-._tabs-item {
-}
-._tabs-block {
-    display: none;
-    &._active {
-        display: block;
-    }
-}
+
 //====================================================================================================
 %effectSub {
     opacity: 1;
@@ -329,85 +279,4 @@
     }
 }
 
-//====================================================================================================
-.filter {
-    // .filter__menu
-    &__menu {
-        display: flex;
-        justify-content: center;
-        @include adaptiv-value("padding-bottom", 50, 30, 1);
-    }
-    // .filter__links
-    &__links {
-        display: flex;
-        flex-wrap: wrap;
-        @include adaptiv-value("font-size", 17, 13, 1);
-        margin: 0px math.div(48px, -17px) * 1em -20px 0px;
-        @media (max-width: ($md3+px)) {
-            justify-content: center;
-        }
-    }
-    // .filter__link
-    &__link {
-        line-height: 150%;
-        color: #b3b3b3;
-        transition: color 0.3s ease 0s;
-        margin: 0px math.div(48px, 17px) * 1em 20px 0px;
-        &._no-touch {
-            pointer-events: none;
-        }
-        &._opened {
-            pointer-events: none;
-            color: $mainColor;
-        }
-        @media (any-hover: hover) {
-            &:hover {
-                &::after {
-                    width: 100%;
-                }
-            }
-        }
-    }
-    // .filter__content
-    &__content {
-        display: flex;
-        flex-wrap: wrap;
-        margin-right: -20px;
-        @media (max-width: ($md2+px)) {
-            margin-right: -15px;
-        }
-        @media (max-width: ($md3+px)) {
-            margin-right: -10px;
-        }
-        @media (max-width: ($md4+px)) {
-            margin-right: 0px;
-        }
-    }
-    // .filter__card
-    &__card {
-        transition: all 0.15s ease 0s;
-        &._hide {
-            animation: hide 0s ease 0s forwards;
-        }
-        &._show {
-            transform: scale(0);
-            opacity: 0;
-        }
-    }
-}
-@keyframes hide {
-    0% {
-        visibility: visible;
-        height: 100px;
-    }
-    100% {
-        visibility: hidden;
-        width: 0;
-        flex: 0 0 0;
-        height: 0;
-        margin: 0;
-        padding: 0;
-        font-size: 0;
-    }
-}
 //</ГОТОВЫЕ КЛАССЫ>====================================================================================================
