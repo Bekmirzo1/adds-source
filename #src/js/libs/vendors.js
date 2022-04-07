@@ -1,6 +1,0 @@
-@@include('libs/moveTo.min.js')
-@@include('libs/swiper.min.js')
-@@include('libs/jquery.min.js')
-@@include('libs/gsap.min.js')
-@@include('libs/ScrollMagic.js')
-@@include('libs/animation.gsap.js')
