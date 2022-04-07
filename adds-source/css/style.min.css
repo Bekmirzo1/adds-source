@@ -1916,7 +1916,7 @@ textarea.input {
 }
 @media (max-width: 767.98px) {
   .fullscreen__cat-coin.coin-1 svg {
-    animation: up-down-1 2s linear forwards infinite;
+    animation: up-down-1 3s linear forwards infinite;
   }
 }
 .fullscreen__cat-coin.coin-2 svg {
@@ -1925,7 +1925,7 @@ textarea.input {
 }
 @media (max-width: 767.98px) {
   .fullscreen__cat-coin.coin-2 svg {
-    animation: up-down-1 2.6s linear forwards infinite;
+    animation: up-down-1 3.6s linear forwards infinite;
   }
 }
 .fullscreen__cat-coin.coin-3 svg {
@@ -1934,7 +1934,7 @@ textarea.input {
 }
 @media (max-width: 767.98px) {
   .fullscreen__cat-coin.coin-3 svg {
-    animation: up-down-1 1.6s linear forwards infinite;
+    animation: up-down-1 2.6s linear forwards infinite;
   }
 }
 .fullscreen__cat-coin.coin-4 svg {
@@ -1943,7 +1943,7 @@ textarea.input {
 }
 @media (max-width: 767.98px) {
   .fullscreen__cat-coin.coin-4 svg {
-    animation: up-down-1 2.755s linear forwards infinite;
+    animation: up-down-1 3.755s linear forwards infinite;
   }
 }
 .fullscreen__cat-coin.coin-5 svg {
@@ -1952,7 +1952,7 @@ textarea.input {
 }
 @media (max-width: 767.98px) {
   .fullscreen__cat-coin.coin-5 svg {
-    animation: up-down-1 2.501s linear forwards infinite;
+    animation: up-down-1 3.501s linear forwards infinite;
   }
 }
 .fullscreen__cat-coin.coin-6 svg {
@@ -1961,7 +1961,7 @@ textarea.input {
 }
 @media (max-width: 767.98px) {
   .fullscreen__cat-coin.coin-6 svg {
-    animation: up-down-1 1.8s linear forwards infinite;
+    animation: up-down-1 2.8s linear forwards infinite;
   }
 }
 .fullscreen__cat-coin.coin-7 svg {
@@ -1970,7 +1970,7 @@ textarea.input {
 }
 @media (max-width: 767.98px) {
   .fullscreen__cat-coin.coin-7 svg {
-    animation: up-down-1 3.1s linear forwards infinite;
+    animation: up-down-1 4.1s linear forwards infinite;
   }
 }
 .fullscreen__cat-coin.coin-8 svg {
@@ -1979,7 +1979,7 @@ textarea.input {
 }
 @media (max-width: 767.98px) {
   .fullscreen__cat-coin.coin-8 svg {
-    animation: up-down-1 3.5s linear forwards infinite;
+    animation: up-down-1 4.5s linear forwards infinite;
   }
 }
 @keyframes up-down-1 {
@@ -2035,7 +2035,7 @@ textarea.input {
       transform: rotate(-60deg);
     }
     100% {
-      top: 600px;
+      top: 1000px;
       width: 25px;
       transform: rotate(30deg);
       height: 25px;
@@ -2044,6 +2044,8 @@ textarea.input {
   }
 }
 .fullscreen__cat-animation {
+  position: relative;
+  z-index: 1000;
   display: flex;
   align-items: center;
   align-items: flex-end;
@@ -2060,6 +2062,10 @@ textarea.input {
   right: 20px;
   order: 2;
 }
+.fullscreen__cat-animation.is-scale .fullscreen__cat-truck::after {
+  left: auto;
+  right: 0;
+}
 @media (max-width: 767.98px) {
   .fullscreen__cat-animation.is-scale .fullscreen__cat-truck {
     right: 2vw;
@@ -2073,6 +2079,26 @@ textarea.input {
   left: 20px;
   z-index: 20;
   display: block;
+}
+.fullscreen__cat-truck::after {
+  content: "";
+  width: calc(100% - 35px);
+  height: calc(100% - 20px);
+  z-index: -1;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  background: #0174ff;
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+@media (max-width: 767.98px) {
+  .fullscreen__cat-truck::after {
+    width: calc(100% - 15px);
+    height: calc(100% - 10px);
+    height: calc(100% - 10px);
+    top: 10px;
+  }
 }
 .fullscreen__cat-truck .coins-item {
   opacity: 0;
@@ -2089,8 +2115,14 @@ textarea.input {
 .fullscreen__cat-svg {
   z-index: 1;
 }
+.fullscreen__cat-svg .js-cat-eye {
+  transition: 0.5s ease-in !important;
+}
+.fullscreen__cat-svg .js-cat-eye-2 {
+  display: block;
+  transition: 0.4s ease-in !important;
+}
 .fullscreen__cat-svg .stroke-white {
-  opacity: 0;
   stroke-width: 3px;
   stroke: #fff;
 }
@@ -2117,6 +2149,12 @@ textarea.input {
 .fullscreen__cat-animation video {
   max-width: 100%;
 }
+.fullscreen__cat-line {
+  position: relative;
+  z-index: 10;
+  background: #0174ff;
+}
+
 .watch-main {
   padding: 0px 0px 80px 0px;
   margin-top: -213px;
@@ -2868,9 +2906,14 @@ textarea.input {
   width: 192px;
   flex: 0 0 192px;
 }
+.cat-animation__cats .js-cat-eye {
+  transition: 0.5s ease-in !important;
+}
+.cat-animation__cats .js-cat-eye-2 {
+  transition: 0.4s ease-in !important;
+}
 .cat-animation__cats .stroke-white {
   stroke-width: 3px;
-  opacity: 0;
   stroke: #fff;
 }
 @media (max-width: 767.98px) {

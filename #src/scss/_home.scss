@@ -681,9 +681,15 @@
     }
     &__cats{
         width: 192px;
+        .js-cat-eye{
+            transition: .5s ease-in !important;
+        }
+
+        .js-cat-eye-2{
+            transition: .4s ease-in !important;
+        }
         .stroke-white{
             stroke-width: 3px;
-            opacity: 0;
             stroke: #fff;
         }
         flex: 0 0 192px;
