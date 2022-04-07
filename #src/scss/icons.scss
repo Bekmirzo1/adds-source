@@ -18,7 +18,7 @@
 
 ._icon-whatsapp:before {
 	content: "\e900";
-	color: #00E676;
+	color: #00e676;
 }
 ._icon-arrow-left:before {
 	content: "\e901";
@@ -35,6 +35,10 @@
 }
 ._icon-f-messenger:before {
 	content: "\e905";
+	background: linear-gradient(180deg, #5e95ff 0%, #0050ec 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: #0050ec;
 }
 ._icon-linkedin:before {
 	content: "\e906";

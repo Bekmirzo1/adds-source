@@ -47,7 +47,7 @@
 
 ._icon-whatsapp:before {
   content: "\e900";
-  color: #00E676;
+  color: #00e676;
 }
 
 ._icon-arrow-left:before {
@@ -69,6 +69,10 @@
 
 ._icon-f-messenger:before {
   content: "\e905";
+  background: linear-gradient(180deg, #5e95ff 0%, #0050ec 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #0050ec;
 }
 
 ._icon-linkedin:before {
@@ -218,7 +222,7 @@ body._lock {
   padding: 11px 20px;
   border-radius: 8px;
   background-color: #fff;
-  border: 2px solid #cdd9e8;
+  border: 1px solid #cdd9e8;
   position: relative;
   min-height: 53px;
   transition: all 0.3s ease 0s;
@@ -289,7 +293,7 @@ body._lock {
 }
 @media (any-hover: hover) {
   .btn_main {
-    border: 2px solid #0074ff;
+    border: 1px solid #0074ff;
     transition: all 0.3s ease 0s;
   }
   .btn_main:hover {
@@ -358,7 +362,7 @@ body._lock {
   }
 }
 .select_icon .select__value {
-  border-right: 2px solid #cdd9e8;
+  border-right: 1px solid #cdd9e8;
   padding: 11px 6px 11px 16px;
   transition: border-color 0.3s ease 0s;
 }
@@ -373,6 +377,7 @@ body._lock {
 .select_icon .select__option {
   display: flex;
   align-items: center;
+  font-size: 14px;
 }
 .select_icon .select__option::before {
   font-size: 24px;
@@ -383,7 +388,7 @@ body._lock {
 }
 .select__title {
   color: #1f2024;
-  border: 2px solid #cdd9e8;
+  border: 1px solid #cdd9e8;
   background-color: #fff;
   cursor: pointer;
   border-radius: 8px;
@@ -427,32 +432,6 @@ body._lock {
   background-color: transparent;
   margin: 0px 7px 0px 0px;
 }
-.select .select__value-items {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 6px;
-  height: auto;
-}
-.select .select__value-items span {
-  height: auto;
-}
-.select .select__value-item {
-  display: flex;
-  background: #0074ff;
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 8px;
-}
-.select .select__value-item-text {
-  margin: 0px 8px 0px 0px;
-}
-.select .select__value-item-close {
-  display: inline-block;
-  flex: 0 0 16px;
-  width: 16px;
-  height: 16px;
-  background: url(../img/icons/close-white.svg) 50% 50% no-repeat;
-}
 .select__options {
   color: #000;
   position: absolute;
@@ -461,7 +440,7 @@ body._lock {
   min-width: 100%;
   left: 0;
   background-color: #fff;
-  border: 2px solid #efefef;
+  border: 1px solid #efefef;
   box-shadow: 4px 4px 20px rgba(0, 8, 81, 0.1);
   font-size: 18px;
   line-height: 120%;
@@ -472,6 +451,8 @@ body._lock {
   cursor: pointer;
   padding: 12px 0px;
   margin: 0px 0px 0px 0px;
+  font-size: 14px;
+  font-weight: 500;
 }
 .select__option:not(:last-child) {
   border-bottom: 1px solid #efefef;
@@ -1388,7 +1369,7 @@ textarea.input {
     min-width: 98px;
     font-size: 18px;
     border-radius: 8px;
-    border: 2px solid #1f2024;
+    border: 1px solid #1f2024;
     padding: 8px 12px;
     min-height: 44px;
   }
@@ -1543,7 +1524,7 @@ textarea.input {
   align-items: center;
   flex-direction: row-reverse;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
 }
 @media (max-width: 1023.98px) {
   .language-header__value {
@@ -1567,7 +1548,7 @@ textarea.input {
 @media (min-width: 1023.98px) {
   .language-header__items {
     border-radius: 8px;
-    margin: 30px 0px 0px 0px;
+    margin: 23px 0px 0px 0px;
     padding: 10px 0px;
     box-shadow: 0px 4px 12px rgba(2, 14, 5, 0.14);
   }
@@ -1842,24 +1823,20 @@ textarea.input {
     min-height: auto;
   }
 }
-.fullscreen__wrap {
+.fullscreen__container {
   overflow: hidden;
   position: relative;
   margin-bottom: 79px;
 }
 @media (max-width: 1240px) {
-  .fullscreen__wrap {
+  .fullscreen__container {
     margin-bottom: calc(60px + 19 * ((100vw - 375px) / 865));
   }
 }
 @media (max-width: 479.98px) {
-  .fullscreen__wrap {
-    margin: 0px 0px 100px 0px;
-  }
-}
-@media (max-width: 479.98px) {
   .fullscreen__container {
-    min-height: 100%;
+    min-height: 100vh;
+    margin: 0px 0px 100px 0px;
   }
 }
 .fullscreen__content {
@@ -1918,13 +1895,13 @@ textarea.input {
 }
 .fullscreen__cat {
   display: flex;
-  width: 100%;
   flex-direction: column;
   align-items: flex-end;
 }
 .fullscreen__cat-coin svg {
   position: absolute;
   display: block;
+  z-index: 0;
 }
 @media (max-width: 767.98px) {
   .fullscreen__cat-coin {
@@ -2013,7 +1990,7 @@ textarea.input {
     transform: rotate(-70deg);
   }
   100% {
-    top: 1000px;
+    top: 700px;
     width: 40px;
     height: 40px;
     transform: rotate(60deg);
@@ -2068,8 +2045,6 @@ textarea.input {
 }
 .fullscreen__cat-animation {
   display: flex;
-  position: relative;
-  z-index: 1000;
   align-items: center;
   align-items: flex-end;
 }
@@ -2085,10 +2060,6 @@ textarea.input {
   right: 20px;
   order: 2;
 }
-.fullscreen__cat-animation.is-scale .fullscreen__cat-truck::after {
-  left: auto;
-  right: 0;
-}
 @media (max-width: 767.98px) {
   .fullscreen__cat-animation.is-scale .fullscreen__cat-truck {
     right: 2vw;
@@ -2102,26 +2073,6 @@ textarea.input {
   left: 20px;
   z-index: 20;
   display: block;
-}
-.fullscreen__cat-truck::after {
-  content: "";
-  width: calc(100% - 35px);
-  height: calc(100% - 20px);
-  z-index: -1;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  background: #0174ff;
-  position: absolute;
-  top: 20px;
-  left: 0;
-}
-@media (max-width: 767.98px) {
-  .fullscreen__cat-truck::after {
-    width: calc(100% - 15px);
-    height: calc(100% - 10px);
-    height: calc(100% - 10px);
-    top: 10px;
-  }
 }
 .fullscreen__cat-truck .coins-item {
   opacity: 0;
@@ -2165,11 +2116,6 @@ textarea.input {
 .fullscreen__cat-animation img,
 .fullscreen__cat-animation video {
   max-width: 100%;
-}
-.fullscreen__cat-line {
-  background: #0174ff;
-  position: relative;
-  z-index: 10;
 }
 .watch-main {
   padding: 0px 0px 80px 0px;
@@ -3581,7 +3527,7 @@ textarea.input {
 }
 .animation-hug__cat {
   width: 350px;
-  pointer-events: none;
+  cursor: pointer;
 }
 @media (max-width: 1260px) {
   .animation-hug__cat {
@@ -3630,7 +3576,7 @@ textarea.input {
   top: -120%;
   right: 46%;
   width: 218px;
-  pointer-events: none;
+  cursor: pointer;
 }
 @media (max-width: 1023.98px) {
   .animation-hug__click-direction {

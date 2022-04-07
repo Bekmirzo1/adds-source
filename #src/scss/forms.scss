@@ -177,7 +177,7 @@
 			}
 		}
 		.select__value {
-			border-right: 2px solid $lightBlueColor;
+			border-right: 1px solid $lightBlueColor;
 			padding: 11px 6px 11px 16px;
 			transition: border-color 0.3s ease 0s;
 			span {
@@ -192,6 +192,7 @@
 		.select__option {
 			display: flex;
 			align-items: center;
+			font-size: 14px;
 			&::before {
 				font-size: 24px;
 				margin: 0px 10px 0px 0px;
@@ -249,32 +250,32 @@
 		background-color: transparent;
 		margin: 0px 7px 0px 0px;
 	}
-	.select__value-items {
-		display: grid;
-		grid-auto-flow: column;
-		gap: 6px;
-		height: auto;
-		span {
-			height: auto;
-		}
-	}
-	.select__value-item {
-		display: flex;
-		background: $blueColor;
-		color: #fff;
-		padding: 8px 12px;
-		border-radius: 8px;
-	}
-	.select__value-item-text {
-		margin: 0px 8px 0px 0px;
-	}
-	.select__value-item-close {
-		display: inline-block;
-		flex: 0 0 16px;
-		width: 16px;
-		height: 16px;
-		background: url(../img/icons/close-white.svg) 50% 50% no-repeat;
-	}
+	// .select__value-items {
+	// 	display: grid;
+	// 	grid-auto-flow: column;
+	// 	gap: 6px;
+	// 	height: auto;
+	// 	span {
+	// 		height: auto;
+	// 	}
+	// }
+	// .select__value-item {
+	// 	display: flex;
+	// 	background: $blueColor;
+	// 	color: #fff;
+	// 	padding: 8px 12px;
+	// 	border-radius: 8px;
+	// }
+	// .select__value-item-text {
+	// 	margin: 0px 8px 0px 0px;
+	// }
+	// .select__value-item-close {
+	// 	display: inline-block;
+	// 	flex: 0 0 16px;
+	// 	width: 16px;
+	// 	height: 16px;
+	// 	background: url(../img/icons/close-white.svg) 50% 50% no-repeat;
+	// }
 	// .select__options
 	&__options {
 		color: #000;
@@ -297,6 +298,9 @@
 		cursor: pointer;
 		padding: 12px 0px;
 		margin: 0px 0px 0px 0px;
+		// font-size: 16px;
+		font-size: 14px;
+		font-weight: 500;
 		&:not(:last-child) {
 			border-bottom: 1px solid #efefef;
 		}
