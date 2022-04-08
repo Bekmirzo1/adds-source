@@ -1745,7 +1745,7 @@ textarea.input {
 }
 .fullscreen__cat-animation {
   position: relative;
-  z-index: 1000;
+  z-index: 90;
   display: flex;
   align-items: center;
   align-items: flex-end;
