@@ -1691,11 +1691,12 @@ textarea.input {
   z-index: 1;
 }
 .fullscreen__cat-svg .js-cat-eye {
-  transition: 0.1s linear !important;
+  transition: opacity 0.2s linear !important;
 }
 .fullscreen__cat-svg .js-cat-eye-2 {
+  display: none;
   display: block;
-  transition: 0.1s linear !important;
+  transition: opacity 0.1s linear !important;
 }
 .fullscreen__cat-svg .stroke-white {
   stroke-width: 3px;
@@ -2496,6 +2497,7 @@ textarea.input {
   transition: 0.1s linear !important;
 }
 .cat-animation__cats .js-cat-eye-2 {
+  display: none;
   transition: 0.1s linear !important;
 }
 .cat-animation__cats .stroke-white {
