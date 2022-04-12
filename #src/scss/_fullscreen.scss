@@ -312,6 +312,16 @@
         display: flex;
         justify-content: flex-end;
     }
+    // .fullscreen__cat-cat
+    &__cat-cat {
+        @media (max-width: ($md3+px)) {
+            max-width: math.div(230, 335) * 100%;
+        }
+        img,
+        video {
+            max-width: 100%;
+        }
+    }
     // .fullscreen__cat-animation
     &__cat-animation {
         // min-width: 230px;
@@ -327,6 +337,6 @@
     &__cat-line {
         position: relative;
         z-index: 10;
-        background: #0174ff;
+        background: $blueColor;
     }
 }

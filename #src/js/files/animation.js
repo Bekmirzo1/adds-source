@@ -54,32 +54,32 @@ const _coinAnimation = {
           repeat: 1,
           y: 10
         });
-      tl2.to(hand, 1, {
-        transformOrigin: 'center center',
-        ease: Elastic.easeNone,
-        y: -10,
+        tl2.to(hand, 1, {
+          transformOrigin: 'center center',
+          ease: Elastic.easeNone,
+          y: -10,
       });
       //eye
 
       var eye = $(".js-cat-eye"),
-        eye_2 = $(".js-cat-eye-2");
-      var tl1 = new TimelineMax({
-        repeat: -1,
-      });
+      eye_2 = $(".js-cat-eye-2");
+       var tl1 = new TimelineMax({
+          repeat: -1,
+        });
 
       tl1.from(eye, {
         autoAlpha: 1,
       });
-
-      tl1.to(eye, {
+      
+      tl1.to(eye, { 
         autoAlpha: 0,
       });
-
+      
       tl1.from(eye_2, {
         y: 0,
         autoAlpha: 0,
-      }, 1);
-
+      },1);
+      
       tl1.to(eye_2, {
         y: 5,
         autoAlpha: 1,
@@ -140,44 +140,44 @@ const _coinAnimation = {
       });
     }
 
-    const coinMove = () => {
+    const coinMove = () =>{
       var controller = new ScrollMagic.Controller();
       var tl = new TimelineMax();
       tl
-        .to(state.coin.coin_6, {
+        .to(state.coin.coin_6,{
           opacity: 1,
           ease: Elastic.easeOut,
         })
-        .to(state.coin.coin_5, {
+        .to(state.coin.coin_5,{
           opacity: 1,
           ease: Power3.easeOut,
-        }, 3)
-        .to(state.coin.coin_4, {
+        },3)
+        .to(state.coin.coin_4,{
           opacity: 1,
           ease: Power3.easeOut,
-        }, 5)
-        .to(state.coin.coin_8, {
+        },5)
+        .to(state.coin.coin_8,{
           opacity: 1,
           ease: Power3.easeOut,
-        }, 4)
-        .to(state.coin.coin_7, {
+        },4)
+        .to(state.coin.coin_7,{
           opacity: 1,
           ease: Power3.easeOut,
-        }, 6)
-        .to(state.coin.coin_2, {
+        },6)
+        .to(state.coin.coin_2,{
           opacity: 1,
           ease: Power3.easeOut,
-        }, 6)
-        .to(state.coin.coin_3, {
+        },6)
+        .to(state.coin.coin_3,{
           opacity: 1,
           ease: Power3.easeOut,
-        }, 11)
-        .to(state.coin.coin_1, {
+        },11)
+        .to(state.coin.coin_1,{
           opacity: 1,
           ease: Power3.easeOut,
-        }, 12)
+        },12)
       var scene = new ScrollMagic.Scene({
-      })
+        })
         .setTween(tl)
         .addTo(controller);
     }
@@ -203,9 +203,9 @@ const _coinAnimation = {
         });
 
       var scene = new ScrollMagic.Scene({
-        triggerElement: ".fullscreen ",
-        reverse: true,
-      })
+          triggerElement: ".fullscreen ",
+          reverse: true,
+        })
         .setTween(tl)
         .addTo(controller);
     }
@@ -281,8 +281,8 @@ const _runCat = {
           onComplete: () => {
             setTimeout(() => {
               isWordFinish();
-
-            }, 800);
+              
+            },800);
             setTimeout(() => {
               isTruckFinish();
               isLassoFinish();
@@ -311,7 +311,7 @@ const _runCat = {
     }
     // start truck
     const isTruck = () => {
-
+      
       var controller = new ScrollMagic.Controller();
       var tl = new TimelineMax();
       tl.to(state.offer.track, {
@@ -324,10 +324,10 @@ const _runCat = {
       });
 
       var scene = new ScrollMagic.Scene({
-        triggerElement: "#cat-animation",
-        triggerHook: 0.5,
-        reverse: false
-      })
+          triggerElement: "#cat-animation",
+          triggerHook: 0.5,
+          reverse: false
+        })
         .setTween(tl)
         .addTo(controller);
 

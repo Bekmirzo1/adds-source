@@ -6,6 +6,8 @@
     // .full-mediation__content
     &__content {
         @include adaptiv-value("padding-top", 120, 0, 1);
+        position: relative;
+        z-index: 2;
         @media (max-width: ($md3+px)) {
             // padding: 140px 0px 16px 0px;
             padding: 120px 0px 16px 0px;
@@ -182,7 +184,7 @@
     // .full-mediation__animation
     &__animation {
         margin: -100px 0px 0px 0px;
-        pointer-events: none;
+        // pointer-events: none;
         @media (max-width: ($md2+px)) {
             margin: -40px 0px 0px 0px;
         }
@@ -195,12 +197,14 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        img {
+        img,
+        video {
             max-width: 100%;
         }
     }
     // .full-mediation__man
     &__man {
+        flex: 0 0 527px;
         @media (max-width: ($md2+px)) {
             flex: 0 0 math.div(520, 984) * 100%;
             // flex: 0 0 400px;
@@ -212,6 +216,7 @@
     // .full-mediation__cat
     &__cat {
         position: relative;
+        flex: 0 0 192px;
         @media (max-width: ($md2+px)) {
             flex: 0 0 math.div(190, 984) * 100%;
             // flex: 0 0 140px;
