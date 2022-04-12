@@ -1598,133 +1598,8 @@ textarea.input {
   flex-direction: column;
   align-items: flex-end;
 }
-.fullscreen__cat-coin svg {
-  position: absolute;
-  display: block;
-  z-index: 0;
-}
-@media (max-width: 767.98px) {
-  .fullscreen__cat-coin {
-    width: 35px;
-    height: 35px;
-  }
-}
-.fullscreen__cat-coin.coin-1 svg {
-  top: 0;
-  animation: up-down-2 1.5s linear forwards infinite;
-  left: 20%;
-}
-@media (max-width: 767.98px) {
-  .fullscreen__cat-coin.coin-1 svg {
-    animation: up-down-1 3s linear forwards infinite;
-  }
-}
-.fullscreen__cat-coin.coin-2 svg {
-  animation: up-down-1 2.5s linear forwards infinite;
-  left: 60%;
-}
-@media (max-width: 767.98px) {
-  .fullscreen__cat-coin.coin-2 svg {
-    animation: up-down-1 3.6s linear forwards infinite;
-  }
-}
-.fullscreen__cat-coin.coin-3 svg {
-  animation: up-down-1 1.5s linear forwards infinite;
-  left: 30%;
-}
-@media (max-width: 767.98px) {
-  .fullscreen__cat-coin.coin-3 svg {
-    animation: up-down-1 2.6s linear forwards infinite;
-  }
-}
-.fullscreen__cat-coin.coin-4 svg {
-  animation: up-down-1 2.156s linear forwards infinite;
-  left: 70%;
-}
-@media (max-width: 767.98px) {
-  .fullscreen__cat-coin.coin-4 svg {
-    animation: up-down-1 3.755s linear forwards infinite;
-  }
-}
-.fullscreen__cat-coin.coin-5 svg {
-  animation: up-down-1 2.7s linear forwards infinite;
-  left: 56%;
-}
-@media (max-width: 767.98px) {
-  .fullscreen__cat-coin.coin-5 svg {
-    animation: up-down-1 3.501s linear forwards infinite;
-  }
-}
-.fullscreen__cat-coin.coin-6 svg {
-  animation: up-down-1 1.2s linear forwards infinite;
-  left: 70%;
-}
-@media (max-width: 767.98px) {
-  .fullscreen__cat-coin.coin-6 svg {
-    animation: up-down-1 2.8s linear forwards infinite;
-  }
-}
-.fullscreen__cat-coin.coin-7 svg {
-  animation: up-down-1 2.6s linear forwards infinite;
-  left: 36%;
-}
-@media (max-width: 767.98px) {
-  .fullscreen__cat-coin.coin-7 svg {
-    animation: up-down-1 4.1s linear forwards infinite;
-  }
-}
-.fullscreen__cat-coin.coin-8 svg {
-  animation: up-down-1 2.5s linear forwards infinite;
-  left: 26%;
-}
-@media (max-width: 767.98px) {
-  .fullscreen__cat-coin.coin-8 svg {
-    animation: up-down-1 4.5s linear forwards infinite;
-  }
-}
-@keyframes up-down-1 {
-  0% {
-    width: 60px;
-    height: 60px;
-    top: 0;
-    transform: rotate(-70deg);
-  }
-  100% {
-    top: 1000px;
-    width: 40px;
-    height: 40px;
-    transform: rotate(60deg);
-  }
-}
-@keyframes up-down-2 {
-  0% {
-    top: 0;
-    width: 80px;
-    height: 80px;
-    transform: rotate(-20deg);
-  }
-  100% {
-    width: 40px;
-    height: 40px;
-    top: 700px;
-    transform: rotate(90deg);
-  }
-}
-@media (max-width: 992px) {
-  @keyframes up-down-1 {
-    0% {
-      top: 0;
-      width: 80px;
-      height: 80px;
-      transform: rotate(-20deg);
-    }
-    100% {
-      top: 610px;
-      width: 40px;
-      height: 40px;
-      transform: rotate(30deg);
-    }
-  }
+.fullscreen__cat-coin {
+  display: none;
 }
 @media (max-width: 767.98px) {
   @keyframes up-down-1 {
@@ -1816,11 +1691,11 @@ textarea.input {
   z-index: 1;
 }
 .fullscreen__cat-svg .js-cat-eye {
-  transition: 0.5s ease-in !important;
+  transition: 0.1s linear !important;
 }
 .fullscreen__cat-svg .js-cat-eye-2 {
   display: block;
-  transition: 0.4s ease-in !important;
+  transition: 0.1s linear !important;
 }
 .fullscreen__cat-svg .stroke-white {
   stroke-width: 3px;
@@ -2618,10 +2493,10 @@ textarea.input {
   flex: 0 0 192px;
 }
 .cat-animation__cats .js-cat-eye {
-  transition: 0.5s ease-in !important;
+  transition: 0.1s linear !important;
 }
 .cat-animation__cats .js-cat-eye-2 {
-  transition: 0.4s ease-in !important;
+  transition: 0.1s linear !important;
 }
 .cat-animation__cats .stroke-white {
   stroke-width: 3px;
